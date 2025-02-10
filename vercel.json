@@ -1,12 +1,9 @@
 {
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/Build/*.data",
       "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        }
+        { "key": "Content-Type", "value": "application/octet-stream" }
       ]
     }
   ]
