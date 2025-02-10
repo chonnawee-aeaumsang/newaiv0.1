@@ -27,7 +27,7 @@
       </div>
     </div>
     <script>
-      var buildUrl = "Build";
+      var buildUrl = window.location.pathname + "Build";
       var loaderUrl = buildUrl + "/build0.2.loader.js";
       var config = {
         dataUrl: buildUrl + "/build0.2.data",
@@ -79,7 +79,8 @@
             unityInstance.SetFullscreen(1);
           };
         }).catch((message) => {
-          alert(message);
+            console.error("Unity WebGL Error:", message);
+            document.body.innerHTML += `<p style="color: red;">Failed to load WebGL. Check console for details.</p>`;
         });
       };
       document.body.appendChild(script);
